@@ -7,7 +7,6 @@ public class Card {
     private Integer cardNumber;
     private User user;
     private Word word;
-
     public Card() {
     }
 

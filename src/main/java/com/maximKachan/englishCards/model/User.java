@@ -1,7 +1,6 @@
 package com.maximKachan.englishCards.model;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -12,8 +11,6 @@ public class User {
     private String name;
     private String surname;
     private LocalDate birthday;
-    private List<Word> words;
-    private List<Card> cards;
 
     public User() {
     }
@@ -26,7 +23,7 @@ public class User {
         this.birthday = birthday;
     }
 
-    public User(Integer id, String email, String username, String password, String name, String surname, LocalDate birthday, List<Word> words, List<Card> cards) {
+    public User(Integer id, String email, String username, String password, String name, String surname, LocalDate birthday) {
         this.id = id;
         this.email = email;
         this.username = username;
@@ -34,8 +31,6 @@ public class User {
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
-        this.words = words;
-        this.cards = cards;
     }
 
     public Integer getId() {
@@ -94,22 +89,6 @@ public class User {
         this.birthday = birthday;
     }
 
-    public List<Word> getWords() {
-        return words;
-    }
-
-    public void setWords(List<Word> words) {
-        this.words = words;
-    }
-
-    public List<Card> getCards() {
-        return cards;
-    }
-
-    public void setCards(List<Card> cards) {
-        this.cards = cards;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -119,8 +98,6 @@ public class User {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", birthday=" + birthday +
-                ", words=" + words +
-                ", cards=" + cards +
                 '}';
     }
 
@@ -131,8 +108,7 @@ public class User {
         User user = (User) o;
         return id.equals(user.id) && email.equals(user.email) && username.equals(user.username) &&
                 password.equals(user.password) && Objects.equals(name, user.name) &&
-                Objects.equals(surname, user.surname) && birthday.equals(user.birthday) &&
-                Objects.equals(words, user.words) && Objects.equals(cards, user.cards);
+                Objects.equals(surname, user.surname) && birthday.equals(user.birthday);
     }
 
     @Override
