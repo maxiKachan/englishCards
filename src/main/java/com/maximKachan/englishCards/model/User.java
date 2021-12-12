@@ -1,15 +1,28 @@
 package com.maximKachan.englishCards.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
+@Table(name = "ec_user")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Integer id;
+    @Column(name = "email")
     private String email;
+    @Column(name = "user_name")
     private String username;
+    @Column(name = "password")
     private String password;
+    @Column(name = "name")
     private String name;
+    @Column(name = "surname")
     private String surname;
+    @Column(name = "birthday")
     private LocalDate birthday;
 
     public User() {

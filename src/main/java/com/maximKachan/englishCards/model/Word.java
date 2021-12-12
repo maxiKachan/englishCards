@@ -2,6 +2,7 @@ package com.maximKachan.englishCards.model;
 
 import java.util.Objects;
 
+
 public class Word {
     private Integer id;
     private String english;
