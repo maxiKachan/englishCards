@@ -1,12 +1,13 @@
 package com.maximKachan.englishCards.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
 @Table(name = "ec_user")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,24 +27,6 @@ public class User {
     private LocalDate birthday;
 
     public User() {
-    }
-
-    public User(Integer id, String email, String username, String password, LocalDate birthday) {
-        this.id = id;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.birthday = birthday;
-    }
-
-    public User(Integer id, String email, String username, String password, String name, String surname, LocalDate birthday) {
-        this.id = id;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.name = name;
-        this.surname = surname;
-        this.birthday = birthday;
     }
 
     public Integer getId() {

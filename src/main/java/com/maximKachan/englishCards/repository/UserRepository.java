@@ -4,4 +4,6 @@ import com.maximKachan.englishCards.model.User;
 
 public interface UserRepository{
     User findUserByEmail(String email);
+
+    void addUser(User user);
 }

@@ -18,6 +18,7 @@
         <spring.data.version>2.6.0</spring.data.version>
         <postgres.version>42.3.1</postgres.version>
         <hibernate.version>5.6.2.Final</hibernate.version>
+        <jupiter.version>5.8.2</jupiter.version>
     </properties>
 
     <dependencies>
@@ -48,6 +49,12 @@
             <version>${hibernate.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.postgresql</groupId>
