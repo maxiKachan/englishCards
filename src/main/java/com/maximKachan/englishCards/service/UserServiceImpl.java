@@ -2,7 +2,9 @@ package com.maximKachan.englishCards.service;
 
 import com.maximKachan.englishCards.model.User;
 import com.maximKachan.englishCards.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService{
 
     private final UserRepository userRepository;

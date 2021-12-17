@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS ec_english_level;
-DROP TABLE IF EXISTS ec_type;
-DROP TABLE IF EXISTS ec_user;
-DROP TABLE IF EXISTS ec_word;
 DROP TABLE IF EXISTS ec_card;
+DROP TABLE IF EXISTS ec_word;
+DROP TABLE IF EXISTS ec_user;
+DROP TABLE IF EXISTS ec_type;
+DROP TABLE IF EXISTS ec_english_level;
 
 CREATE TABLE ec_english_level
 (
