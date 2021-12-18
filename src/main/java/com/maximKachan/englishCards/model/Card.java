@@ -1,20 +1,31 @@
 package com.maximKachan.englishCards.model;
 
-import java.util.Objects;
+import javax.persistence.*;
+import java.time.LocalDate;
 
+@Entity
+@Table(name = "ec_card")
 public class Card {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "card_id")
     private Integer cardId;
-    private Integer cardNumber;
+    @ManyToOne
     private User user;
+    @ManyToOne
     private Word word;
-    public Card() {
-    }
+    @Column(name = "create_date")
+    private LocalDate createDate;
+    @Column(name = "repeat_date")
+    private LocalDate repeatDate;
+    @Column(name = "attempt")
+    private Integer attempt;
+    @Column(name = "streak")
+    private Integer streak;
+    @Column(name = "learned")
+    private Boolean isLearned;
 
-    public Card(Integer cardId, Integer cardNumber, User user, Word word) {
-        this.cardId = cardId;
-        this.cardNumber = cardNumber;
-        this.user = user;
-        this.word = word;
+    public Card() {
     }
 
     public Integer getCardId() {
@@ -23,14 +34,6 @@ public class Card {
 
     public void setCardId(Integer cardId) {
         this.cardId = cardId;
-    }
-
-    public Integer getCardNumber() {
-        return cardNumber;
-    }
-
-    public void setCardNumber(Integer cardNumber) {
-        this.cardNumber = cardNumber;
     }
 
     public User getUser() {
@@ -49,26 +52,43 @@ public class Card {
         this.word = word;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Card card = (Card) o;
-        return cardId.equals(card.cardId) && cardNumber.equals(card.cardNumber) && user.equals(card.user) && word.equals(card.word);
+    public LocalDate getCreateDate() {
+        return createDate;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(cardId, cardNumber, user, word);
+    public void setCreateDate(LocalDate createDate) {
+        this.createDate = createDate;
     }
 
-    @Override
-    public String toString() {
-        return "Card{" +
-                "cardId=" + cardId +
-                ", cardNumber=" + cardNumber +
-                ", user=" + user +
-                ", word=" + word +
-                '}';
+    public LocalDate getRepeatDate() {
+        return repeatDate;
+    }
+
+    public void setRepeatDate(LocalDate repeatDate) {
+        this.repeatDate = repeatDate;
+    }
+
+    public Integer getAttempt() {
+        return attempt;
+    }
+
+    public void setAttempt(Integer attempt) {
+        this.attempt = attempt;
+    }
+
+    public Integer getStreak() {
+        return streak;
+    }
+
+    public void setStreak(Integer streak) {
+        this.streak = streak;
+    }
+
+    public Boolean getLearned() {
+        return isLearned;
+    }
+
+    public void setLearned(Boolean learned) {
+        isLearned = learned;
     }
 }

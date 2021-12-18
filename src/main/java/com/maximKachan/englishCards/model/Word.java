@@ -1,14 +1,26 @@
 package com.maximKachan.englishCards.model;
 
+import javax.persistence.*;
 import java.util.Objects;
 
-
+@Entity
+@Table(name = "ec_word")
 public class Word {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "word_id")
     private Integer id;
+    @Column(name = "english")
     private String english;
+    @Column(name = "russian")
     private String russian;
+    @Column(name = "transcription")
     private String transcription;
+    @Column(name = "type_id")
+    @Enumerated(EnumType.STRING)
     private Type type;
+    @Column(name = "level_id")
+    @Enumerated(EnumType.STRING)
     private EnglishLevel englishLevel;
 
     public Word() {
