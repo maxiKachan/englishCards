@@ -1,7 +1,7 @@
 package com.maximKachan.englishCards.repository;
 
 import com.maximKachan.englishCards.model.User;
-import com.maximKachan.englishCards.util.TestHelper;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
@@ -13,6 +13,7 @@ import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static com.maximKachan.englishCards.util.TestHelper.*;
 
 @ContextConfiguration({"classpath:spring/spring-context.xml", "classpath:spring/spring-db.xml"})
 @ExtendWith(SpringExtension.class)
@@ -29,11 +30,23 @@ class UserRepositoryImplTest {
     void findUserByEmail() {
         log.info("<**********     Start Test     **********>");
         User user = userRepository.findUserByEmail("ivanov@gmail.com");
-        assertEquals(TestHelper.TEST_USER, user);
+        assertEquals(TEST_USER_BY_EMAIL, user);
+        log.info("<**********     Finished Test     **********>");
+    }
+
+    @Test
+    void findUserByWrongEmail(){
+        log.info("<**********     Start Test     **********>");
+        User user = userRepository.findUserByEmail("sidorov@gmail.com");
+        assertNull(user);
         log.info("<**********     Finished Test     **********>");
     }
 
     @Test
     void addUser() {
+        log.info("<**********     Start Test     **********>");
+        userRepository.addUser(TEST_USER_SAVE);
+        assertEquals(TEST_USER_SAVED, userRepository.findUserByEmail(TEST_USER_SAVE.getEmail()));
+        log.info("<**********     Finished Test     **********>");
     }
 }

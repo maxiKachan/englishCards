@@ -39,6 +39,15 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
+    public User(String email, String username, String password, String name, String surname, LocalDate birthday) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.birthday = birthday;
+    }
+
     public Integer getId() {
         return id;
     }
