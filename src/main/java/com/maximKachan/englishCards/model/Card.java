@@ -11,8 +11,10 @@ public class Card {
     @Column(name = "card_id")
     private Integer cardId;
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne
+    @JoinColumn(name = "word_id")
     private Word word;
     @Column(name = "create_date")
     private LocalDate createDate;

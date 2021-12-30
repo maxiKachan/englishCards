@@ -1,22 +1,6 @@
 DROP TABLE IF EXISTS ec_card;
 DROP TABLE IF EXISTS ec_word;
 DROP TABLE IF EXISTS ec_user;
-DROP TABLE IF EXISTS ec_type;
-DROP TABLE IF EXISTS ec_english_level;
-
-CREATE TABLE ec_english_level
-(
-    level_id SERIAL,
-    description VARCHAR(30) NOT NULL,
-    PRIMARY KEY (level_id)
-);
-
-CREATE TABLE ec_type
-(
-    type_id SERIAL,
-    type_name VARCHAR(30),
-    PRIMARY KEY (type_id)
-);
 
 CREATE TABLE ec_user
 (
@@ -36,11 +20,9 @@ CREATE TABLE ec_word
     english VARCHAR(100) NOT NULL,
     russian VARCHAR(100) NOT NULL,
     transcription VARCHAR(100),
-    type_id INT NOT NULL,
-    level_id INT NOT NULL,
-    PRIMARY KEY (word_id),
-    FOREIGN KEY (level_id) REFERENCES ec_english_level (level_id) ON DELETE RESTRICT,
-    FOREIGN KEY (type_id) REFERENCES ec_type (type_id) ON DELETE RESTRICT
+    type VARCHAR(50) NOT NULL,
+    level VARCHAR(50) NOT NULL,
+    PRIMARY KEY (word_id)
 );
 
 CREATE TABLE ec_card

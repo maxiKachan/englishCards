@@ -1,7 +1,6 @@
 package com.maximKachan.englishCards.repository;
 
 import com.maximKachan.englishCards.model.User;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
@@ -12,8 +11,9 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static com.maximKachan.englishCards.util.TestHelper.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 @ContextConfiguration({"classpath:spring/spring-context.xml", "classpath:spring/spring-db.xml"})
 @ExtendWith(SpringExtension.class)
@@ -30,6 +30,7 @@ class UserRepositoryImplTest {
     void findUserByEmail() {
         log.info("<**********     Start Test     **********>");
         User user = userRepository.findUserByEmail("ivanov@gmail.com");
+        System.out.println(user);
         assertEquals(TEST_USER_BY_EMAIL, user);
         log.info("<**********     Finished Test     **********>");
     }

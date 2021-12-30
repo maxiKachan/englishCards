@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "ec_user")
@@ -25,11 +26,14 @@ public class User implements Serializable {
     private String surname;
     @Column(name = "birthday")
     private LocalDate birthday;
+    @OneToMany(mappedBy = "user" ,fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Card> cards;
 
     public User() {
     }
 
-    public User(Integer id, String email, String username, String password, String name, String surname, LocalDate birthday) {
+    public User(Integer id, String email, String username, String password, String name,
+                String surname, LocalDate birthday) {
         this.id = id;
         this.email = email;
         this.username = username;
@@ -104,15 +108,25 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
+    public Set<Card> getCards() {
+        return cards;
+    }
+
+    public void setCards(Set<Card> cards) {
+        this.cards = cards;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "email='" + email + '\'' +
+                "id=" + id +
+                ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", birthday=" + birthday +
+                ", cards=" + cards +
                 '}';
     }
 

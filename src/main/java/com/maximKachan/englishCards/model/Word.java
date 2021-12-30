@@ -16,10 +16,10 @@ public class Word {
     private String russian;
     @Column(name = "transcription")
     private String transcription;
-    @Column(name = "type_id")
+    @Column(name = "type")
     @Enumerated(EnumType.STRING)
     private Type type;
-    @Column(name = "level_id")
+    @Column(name = "level")
     @Enumerated(EnumType.STRING)
     private EnglishLevel englishLevel;
 
@@ -100,6 +100,6 @@ public class Word {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, english, russian, transcription, type, englishLevel);
+        return id;
     }
 }
