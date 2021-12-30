@@ -32,6 +32,14 @@ public class Word {
         this.russian = russian;
     }
 
+    public Word( String english, String russian, String transcription, Type type, EnglishLevel level) {
+        this.english = english;
+        this.russian = russian;
+        this.transcription = transcription;
+        this.type = type;
+        this.englishLevel = level;
+    }
+
     public Word(Integer id, String english, String russian, String transcription, Type type, EnglishLevel level) {
         this.id = id;
         this.english = english;
@@ -101,5 +109,17 @@ public class Word {
     @Override
     public int hashCode() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "id=" + id +
+                ", english='" + english + '\'' +
+                ", russian='" + russian + '\'' +
+                ", transcription='" + transcription + '\'' +
+                ", type=" + type +
+                ", englishLevel=" + englishLevel +
+                '}';
     }
 }

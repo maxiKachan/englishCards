@@ -30,6 +30,17 @@ public class Card {
     public Card() {
     }
 
+    public Card(User user, Word word, LocalDate createDate, LocalDate repeatDate, Integer attempt,
+                Integer streak, Boolean isLearned) {
+        this.user = user;
+        this.word = word;
+        this.createDate = createDate;
+        this.repeatDate = repeatDate;
+        this.attempt = attempt;
+        this.streak = streak;
+        this.isLearned = isLearned;
+    }
+
     public Integer getCardId() {
         return cardId;
     }
@@ -92,5 +103,18 @@ public class Card {
 
     public void setLearned(Boolean learned) {
         isLearned = learned;
+    }
+
+    @Override
+    public String toString() {
+        return "\nCard{" +
+                "\ncardId=" + cardId +
+                "\nword=" + word +
+                "\ncreateDate=" + createDate +
+                "\nrepeatDate=" + repeatDate +
+                "\nattempt=" + attempt +
+                "\nstreak=" + streak +
+                "\nisLearned=" + isLearned +
+                "\n}";
     }
 }
