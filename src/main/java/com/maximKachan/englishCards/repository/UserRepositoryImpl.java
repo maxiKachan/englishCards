@@ -26,6 +26,11 @@ public class UserRepositoryImpl implements UserRepository{
     }
 
     @Override
+    public User findUserById(Integer id) {
+        return jpaUser.findUserById(id);
+    }
+
+    @Override
     @Transactional()
     public void addUser(User user) {
         jpaUser.save(user);

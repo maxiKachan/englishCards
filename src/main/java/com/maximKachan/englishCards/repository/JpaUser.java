@@ -9,6 +9,8 @@ public interface JpaUser extends JpaRepository<User, Integer> {
 
     User findUserByEmail(String email);
 
+    User findUserById(int id);
+
     @Override
     @Transactional
     <S extends User> S save(S entity);
