@@ -34,7 +34,7 @@ public class LoginController {
             model.addAttribute("username", user.getUsername());
             model.addAttribute("id", user.getId());
             log.info("authorizeUser");
-            return "welcome";
+            return "user";
         }
         System.out.println(user);
         return "login";
