@@ -27,6 +27,7 @@
         <tomcat.version>9.0.45</tomcat.version>
         <jstl.version>1.2</jstl.version>
         <json.version>2.13.1</json.version>
+        <mockito.version>1.10.19</mockito.version>
     </properties>
 
     <dependencies>
@@ -87,7 +88,12 @@
             <version>${jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.tomcat</groupId>
@@ -123,7 +129,6 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>${json.version}</version>
         </dependency>
-
 
     </dependencies>
 
