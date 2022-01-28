@@ -6,5 +6,6 @@
 <body>
     <h2>Hello, ${username}</h2>
     <a href="/cards/${id}">cards</a>
+    <a href="/users/${id}/addWord">add word</a>
 </body>
 </html>

@@ -5,7 +5,7 @@
 </head>
 <body>
 <h3>Login page</h3>
-<form method="post" action="/login">
+<form method="post" action="login">
     <label>Username<input type="text" name="username"></label>
     <br>
     <label>Password<input type="text" name="password"></label>
