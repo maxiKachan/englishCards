@@ -12,5 +12,8 @@
     <br>
     <button type="submit">Login</button>
 </form>
+<form method="get" action="registration">
+    <button type="submit">Registration</button>
+</form>
 </body>
 </html>
