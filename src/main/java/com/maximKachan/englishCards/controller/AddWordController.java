@@ -1,9 +1,8 @@
 package com.maximKachan.englishCards.controller;
 
 import com.maximKachan.englishCards.model.*;
-import com.maximKachan.englishCards.repository.JpaCard;
-import com.maximKachan.englishCards.repository.JpaWord;
 import com.maximKachan.englishCards.repository.UserRepository;
+import com.maximKachan.englishCards.service.CardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,13 +15,11 @@ import java.util.Map;
 public class AddWordController {
 
     UserRepository userRepository;
-    JpaCard jpaCard;
-    JpaWord jpaWord;
+    CardService cardService;
 
-    public AddWordController(UserRepository userRepository, JpaCard jpaCard, JpaWord jpaWord) {
+    public AddWordController(UserRepository userRepository, CardService cardService) {
         this.userRepository = userRepository;
-        this.jpaCard = jpaCard;
-        this.jpaWord = jpaWord;
+        this.cardService = cardService;
     }
 
     @GetMapping
@@ -47,8 +44,7 @@ public class AddWordController {
 
         Card card = new Card(user, word, LocalDate.now(), LocalDate.now(), 0, 0, false);
 
-        jpaWord.save(word);
-        jpaCard.save(card);
+        cardService.addCard(card);
 
         return "redirect:/cards/" + id;
     }
