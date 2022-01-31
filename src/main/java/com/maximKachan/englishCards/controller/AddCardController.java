@@ -13,13 +13,13 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("users/{id}/addWord")
-public class AddWordController {
+public class AddCardController {
 
     UserRepository userRepository;
     JpaCard jpaCard;
     JpaWord jpaWord;
 
-    public AddWordController(UserRepository userRepository, JpaCard jpaCard, JpaWord jpaWord) {
+    public AddCardController(UserRepository userRepository, JpaCard jpaCard, JpaWord jpaWord) {
         this.userRepository = userRepository;
         this.jpaCard = jpaCard;
         this.jpaWord = jpaWord;
