@@ -1,6 +1,5 @@
 package com.maximKachan.englishCards.repository;
 
-import com.maximKachan.englishCards.model.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
@@ -11,9 +10,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static com.maximKachan.englishCards.util.TestHelper.TEST_USER_BY_EMAIL;
 import static com.maximKachan.englishCards.util.TestHelper.TEST_WORD_SAVE;
-import static org.junit.jupiter.api.Assertions.*;
 
 @ContextConfiguration({"classpath:spring/spring-context.xml", "classpath:spring/spring-db.xml"})
 @ExtendWith(SpringExtension.class)
